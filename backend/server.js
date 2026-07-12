@@ -6,6 +6,7 @@ const path = require('path')
 const { Server } = require('socket.io')
 
 const app = express()
+const server = http.createServer(app)
 const port = process.env.PORT || 4000
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000'
 
