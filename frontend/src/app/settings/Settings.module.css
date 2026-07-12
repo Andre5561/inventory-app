@@ -1,0 +1,105 @@
+.pageTitle {
+  margin: 0 0 36px;
+  color: var(--dark);
+  font-size: 30px;
+}
+
+.card {
+  max-width: 720px;
+  margin-bottom: 18px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.cardTitle svg {
+  margin-top: 2px;
+  color: var(--green);
+}
+
+.cardTitle h2 {
+  margin: 0 0 5px;
+  color: #405a69;
+  font-size: 18px;
+}
+
+.cardTitle p {
+  margin: 0;
+  color: #8ba2af;
+  font-size: 13px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.field span {
+  color: #587384;
+  font-size: 14px;
+}
+
+.field select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+  color: var(--dark);
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--green);
+}
+
+.checkbox span {
+  display: grid;
+  gap: 5px;
+}
+
+.checkbox strong {
+  color: #405a69;
+  font-size: 14px;
+}
+
+.checkbox small {
+  color: #8ba2af;
+  font-size: 13px;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 21px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.saveButton:hover {
+  filter: brightness(0.95);
+}

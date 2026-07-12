@@ -1,0 +1,35 @@
+.status {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-self: end;
+  gap: 3px 14px;
+  min-width: 185px;
+  font-size: 12px;
+}
+
+.status > span {
+  grid-column: 1 / -1;
+  font-size: 14px;
+}
+
+.status small,
+.status b {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status small svg,
+.status b {
+  color: var(--green);
+}
+
+.status strong {
+  color: var(--dark);
+}
+
+@media (max-width: 900px) {
+  .status > span {
+    display: none;
+  }
+}
