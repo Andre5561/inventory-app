@@ -14,7 +14,10 @@ export default function LiveStatus() {
       setCurrentTime(new Date())
     }, 1000)
 
-    const socket = io('http://localhost:4000')
+    const socketUrl =
+      process.env.NEXT_PUBLIC_SOCKET_URL ?? 'http://localhost:4000'
+
+    const socket = io(socketUrl)
 
     socket.on('sessions:count', (count: number) => {
       setSessions(count)

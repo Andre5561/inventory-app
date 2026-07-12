@@ -6,11 +6,12 @@ const path = require('path')
 const { Server } = require('socket.io')
 
 const app = express()
-const server = http.createServer(app)
+const port = process.env.PORT || 4000
+const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000'
 
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: clientUrl,
   },
 })
 
@@ -266,6 +267,6 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(4000, () => {
-  console.log('Backend started on http://localhost:4000')
+server.listen(port, () => {
+  console.log(`Backend started on port ${port}`)
 })
