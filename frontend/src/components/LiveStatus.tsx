@@ -6,13 +6,15 @@ import { io } from 'socket.io-client'
 import styles from './LiveStatus.module.css'
 
 export default function LiveStatus() {
-  const [currentTime, setCurrentTime] = useState(new Date())
+  const [currentTime, setCurrentTime] = useState<Date | null>(null)
   const [sessions, setSessions] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date())
-    }, 1000)
+    const updateTime = () => setCurrentTime(new Date())
+
+    updateTime()
+
+    const timer = window.setInterval(updateTime, 1000)
 
     const socketUrl =
       process.env.NEXT_PUBLIC_SOCKET_URL ?? 'http://localhost:4000'
@@ -24,29 +26,34 @@ export default function LiveStatus() {
     })
 
     return () => {
-      clearInterval(timer)
+      window.clearInterval(timer)
       socket.disconnect()
     }
   }, [])
 
+  const date = currentTime
+    ? currentTime.toLocaleDateString('ru-RU', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+      })
+    : ''
+
+  const time = currentTime
+    ? currentTime.toLocaleTimeString('ru-RU', {
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+    : '--:--'
+
   return (
     <div className={styles.status}>
       <span>Сегодня</span>
-
-      <strong>
-        {currentTime.toLocaleDateString('ru-RU', {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric',
-        })}
-      </strong>
+      <strong>{date}</strong>
 
       <small>
         <Clock3 size={14} />
-        {currentTime.toLocaleTimeString('ru-RU', {
-          hour: '2-digit',
-          minute: '2-digit',
-        })}
+        {time}
       </small>
 
       <b>
