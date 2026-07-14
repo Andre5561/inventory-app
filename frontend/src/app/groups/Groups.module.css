@@ -16,7 +16,7 @@
 }
 
 .layoutSelected {
-  grid-template-columns: 38% 62%;
+  grid-template-columns: minmax(0, 38fr) minmax(0, 62fr);
 }
 
 .list {
