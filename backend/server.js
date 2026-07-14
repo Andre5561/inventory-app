@@ -30,7 +30,7 @@ const initialData = {
       date: '06 / Апр / 2017',
       shortDate: '04 / 12',
       usd: '2 500 $',
-      uah: '250 000.50 UAH',
+      uah: '100 000 UAH',
     },
     {
       id: 2,
