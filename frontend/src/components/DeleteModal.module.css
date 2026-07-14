@@ -1,0 +1,136 @@
+:global(.modal-overlay) {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(46, 69, 81, 0.55);
+}
+
+:global(.delete-modal) {
+  position: relative;
+  width: min(100%, 790px);
+  overflow: visible;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(33, 51, 61, 0.25);
+}
+
+:global(.delete-modal__close) {
+  position: absolute;
+  top: -21px;
+  right: -21px;
+  z-index: 1;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #8ba1ae;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(33, 51, 61, 0.2);
+  cursor: pointer;
+}
+
+:global(.delete-modal h2) {
+  margin: 0;
+  padding: 30px 36px;
+  color: #2f404a;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+:global(.delete-modal__product) {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 62px;
+  padding: 0 36px;
+  border-top: 1px solid #edf1f3;
+  color: #2f404a;
+}
+
+:global(.delete-modal__dot) {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 50%;
+  background: #8cc63f;
+}
+
+:global(.delete-modal__image) {
+  color: #637c8a;
+  font-size: 28px;
+}
+
+:global(.delete-modal__product div) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+:global(.delete-modal__product strong) {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+:global(.delete-modal__product small) {
+  color: #8ba1ae;
+  font-size: 14px;
+}
+
+:global(.delete-modal__footer) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  min-height: 112px;
+  padding: 0 36px;
+  background: #8cc63f;
+}
+
+:global(.delete-modal__footer > button:first-child) {
+  border: 0;
+  color: #fff;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+:global(.delete-modal__confirm) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 31px;
+  border: 0;
+  border-radius: 30px;
+  color: #ef4056;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  :global(.delete-modal h2) {
+    padding: 24px;
+    font-size: 18px;
+  }
+
+  :global(.delete-modal__product) {
+    padding: 14px 24px;
+  }
+
+  :global(.delete-modal__footer) {
+    gap: 14px;
+    min-height: 90px;
+    padding: 0 24px;
+  }
+}
