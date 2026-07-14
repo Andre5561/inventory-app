@@ -42,6 +42,8 @@
 }
 
 .cardActive {
+  padding-right: 60px;
+  overflow: hidden;
   background: #f9fbfc;
 }
 
@@ -58,7 +60,6 @@
   background: #d5e1e7;
   font-size: 38px;
 }
-
 .icon {
   display: grid;
   width: 42px;
