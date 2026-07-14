@@ -1,4 +1,4 @@
-:global(.modal-overlay) {
+.overlay {
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -9,16 +9,16 @@
   background: rgba(46, 69, 81, 0.55);
 }
 
-:global(.delete-modal) {
+.modal {
   position: relative;
   width: min(100%, 790px);
   overflow: visible;
-  border-radius: 3px;
+  border-radius: 4px;
   background: #fff;
   box-shadow: 0 18px 50px rgba(33, 51, 61, 0.25);
 }
 
-:global(.delete-modal__close) {
+.close {
   position: absolute;
   top: -21px;
   right: -21px;
@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-:global(.delete-modal h2) {
+.modal h2 {
   margin: 0;
   padding: 30px 36px;
   color: #2f404a;
@@ -43,7 +43,7 @@
   line-height: 1.35;
 }
 
-:global(.delete-modal__product) {
+.product {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -53,7 +53,7 @@
   color: #2f404a;
 }
 
-:global(.delete-modal__dot) {
+.dot {
   width: 10px;
   height: 10px;
   flex: 0 0 10px;
@@ -61,29 +61,29 @@
   background: #8cc63f;
 }
 
-:global(.delete-modal__image) {
+.image {
   color: #637c8a;
   font-size: 28px;
 }
 
-:global(.delete-modal__product div) {
+.info {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-:global(.delete-modal__product strong) {
+.info strong {
   font-size: 15px;
   font-weight: 500;
   text-decoration: underline;
 }
 
-:global(.delete-modal__product small) {
+.info small {
   color: #8ba1ae;
   font-size: 14px;
 }
 
-:global(.delete-modal__footer) {
+.footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -93,7 +93,7 @@
   background: #8cc63f;
 }
 
-:global(.delete-modal__footer > button:first-child) {
+.cancel {
   border: 0;
   color: #fff;
   background: transparent;
@@ -103,7 +103,7 @@
   cursor: pointer;
 }
 
-:global(.delete-modal__confirm) {
+.confirm {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -119,16 +119,16 @@
 }
 
 @media (max-width: 600px) {
-  :global(.delete-modal h2) {
+  .modal h2 {
     padding: 24px;
     font-size: 18px;
   }
 
-  :global(.delete-modal__product) {
+  .product {
     padding: 14px 24px;
   }
 
-  :global(.delete-modal__footer) {
+  .footer {
     gap: 14px;
     min-height: 90px;
     padding: 0 24px;
